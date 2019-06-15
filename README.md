@@ -1,10 +1,10 @@
 # asl-calculator
-**A math expression parser and evaluator.**
+**A math expression parser and evaluator**
 
 This class allows evaluating math expressions expressed as strings, including named variables and standard
 functions.
 
-```
+```cpp
 Calculator calc("-3.5*cos(i*5)+pi*(-2+sqrt(i*pi^2))/3");
 double y = calc.set("i", 25.5).compute();
 ```
@@ -14,12 +14,14 @@ Constants `pi` and `e` are predefined, as are the functions `abs`, `sqrt`, `sin`
 
 You can also evaluate directly in one statement:
 
-```
+```cpp
 double y = Calculator::eval("-3.5*cos(i*5)+pi*(-2+sqrt(i*pi^2))/3", Dic<double>("i", 25.5));
 ```
 
 But if you need to evaluate the same expression many times with different variable values, this
 will be much slower as it has to parse the expression each time.
+
+Requires the [ASL](https://github.com/aslze/asl) library.
 
 
 **Benchmark**
