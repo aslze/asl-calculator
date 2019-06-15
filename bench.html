@@ -1,0 +1,23 @@
+<script>
+
+function main()
+{
+	var t1 = performance.now();
+	
+	var n = 100000;
+
+	var y = 0.0;
+
+	for(var i=0; i<n; i++)
+		y += -3.5 * Math.cos(i*5.0)+Math.PI*(-2+Math.sqrt(i*Math.PI*Math.PI))/3
+	
+	var t2 = performance.now();
+	
+	document.getElementById("p").innerText = y + "\n" + ((t2-t1)/n * 1e3) + " us";
+}
+</script>
+
+<pre id="p"></pre>
+
+<body onload="main()">
+</body>
