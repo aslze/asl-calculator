@@ -1,4 +1,4 @@
-// Copyright(c) 2019 aslze
+// Copyright(c) 2021 aslze
 // Licensed under the MIT License (http://opensource.org/licenses/MIT)
 
 #include "Calculator.h"
@@ -111,7 +111,7 @@ void Calculator::parse(const String& e)
 
 	// build reverse
 
-	foreach2(int i, const auto& token, _input)
+	foreach2(int i, const Token& token, _input)
 	{
 		char op;
 		switch (token.type)
@@ -181,7 +181,7 @@ double Calculator::compute()
 
 	// execute
 
-	foreach(const auto& token, _output)
+	foreach(const Token& token, _output)
 	{
 		double x1, x2;
 		switch (token.type)

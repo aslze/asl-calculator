@@ -1,9 +1,5 @@
 cmake_minimum_required(VERSION 2.8.11)
 
-if(NOT MSVC)
-	set(CMAKE_CXX_FLAGS "-std=c++0x -O3")
-endif()
-
 set(TARGET calculator)
 
 project(${TARGET})
@@ -22,4 +18,4 @@ set(SRC
 
 add_executable(${TARGET} ${SRC}) 
 
-target_link_libraries ( ${TARGET} asls )
+target_link_libraries(${TARGET} asls)

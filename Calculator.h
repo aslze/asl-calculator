@@ -1,4 +1,4 @@
-// Copyright(c) 2019 aslze
+// Copyright(c) 2021 aslze
 // Licensed under the MIT License (http://opensource.org/licenses/MIT)
 
 #include <asl/String.h>
