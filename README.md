@@ -2,7 +2,7 @@
 **A math expression parser and evaluator**
 
 This class allows evaluating math expressions expressed as strings, including named variables and standard
-functions.
+functions. It implements the [Shunting-yard_algorithm](https://en.wikipedia.org/wiki/Shunting-yard_algorithm).
 
 ```cpp
 Calculator calc("-3.5*cos(i*5)+pi*(-2+sqrt(i*pi^2))/3");
@@ -30,9 +30,9 @@ Summing `-3.5*cos(i*5)+pi*(-2+sqrt(i*pi^2))/3 for i = 0 .. 10000`, time per each
 
 | Evaluation | Time (μs) | Relative time |
 |------------|----------:|--------------:|
-| Native     | 0.013     | 1.0           |
-| compute()  | 0.236     | 18.6          |
-| eval()     | 36.510    | 2872.0        |
+| Native     | 0.012     | 1.0           |
+| compute()  | 0.219     | 18.5          |
+| eval()     | 4.374     | 370.1         |
 | python     | 0.760     | 58.4          |
 | javascript | 0.050     | 3.8           |
 
