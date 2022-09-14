@@ -1,4 +1,4 @@
-// Copyright(c) 2021 aslze
+// Copyright(c) 2021-2022 aslze
 // Licensed under the MIT License (http://opensource.org/licenses/MIT)
 
 #include "Calculator.h"
@@ -166,16 +166,13 @@ void Calculator::parse(const String& e)
 	}
 }
 
-double Calculator::value(const Calculator::Token& t)
+double Calculator::value(const Calculator::Token& t) const
 {
 	double def = 0.0;
-	if (t.type == NAME)
-		return _variables.get(t.val, def);
-	else
-		return (double)t.x;
+	return (t.type == NAME)? _variables.get(t.val, def) : t.x;
 }
 
-double Calculator::compute()
+double Calculator::compute() const
 {
 	_operands.clear();
 

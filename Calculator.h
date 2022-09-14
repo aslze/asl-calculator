@@ -1,5 +1,8 @@
-// Copyright(c) 2021 aslze
+// Copyright(c) 2021-2022 aslze
 // Licensed under the MIT License (http://opensource.org/licenses/MIT)
+
+#ifndef ASL_CALCULATOR_H
+#define ASL_CALCULATOR_H
 
 #include <asl/String.h>
 #include <asl/Array.h>
@@ -33,7 +36,7 @@ public:
 	/**
 	Computes the value of a previously parsed expression
 	*/
-	double compute();
+	double compute() const;
 	/**
 	Parses and computes the value of an expression, optionally using a set of variable values
 	*/
@@ -58,9 +61,11 @@ private:
 	};
 	asl::Array<Token> _input, _output;
 	asl::Stack<Token> _operators;
-	asl::Stack<double> _operands;
+	mutable asl::Stack<double> _operands;
 	asl::Dic<double> _variables;
 	asl::Dic<Function> _natfunctions;
 	void init();
-	double value(const Token& t);
+	double value(const Token& t) const;
 };
+
+#endif
