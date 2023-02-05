@@ -57,7 +57,7 @@ void Calculator::parse(const String& e)
 	_input.clear();
 	_output.clear();
 	String e1 = e + ' ';
-	char* p = e1;
+	const char* p = e1;
 	String name;
 	TokenType type = NONE;
 	while (char c = *p++)
