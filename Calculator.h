@@ -1,4 +1,4 @@
-// Copyright(c) 2021-2022 aslze
+// Copyright(c) 2021-2025 aslze
 // Licensed under the MIT License (http://opensource.org/licenses/MIT)
 
 #ifndef ASL_CALCULATOR_H
